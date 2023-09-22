@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <!--Meta gegevens-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="voorbeelden van jQuery toepassingen">
+    <meta name="author" content="Sanne Komhoff">
+
+    <!--titel-->
+    <title>Huiswerkopgaven les 25 - jQuery</title>
+    
+    <style>
+        /*CSS-styling*/
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #18084a;
+        }
+
+        p {
+          padding: 10px;
+        }
+
+        form  {
+          padding: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #0074d9;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #voorbeeld1 {
+            width: 200px;
+            height: 200px;
+            background-color: #cfd2f3;
+            margin: 20px auto;
+            text-align: center;
+            line-height: 200px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Koptekst-->
+    <h1>jQuery Voorbeelden</h1>
+
+    <!-- Voorbeeld 1: Tekstkleur wijzigen -->
+    <div id="voorbeeld1">Klik op een knop!</div>
+    <button id="veranderKleurKnop">Verander Kleur</button><br><br>
+
+    <!-- Voorbeeld 2: Elementen verbergen en tonen -->
+    <div id="voorbeeld2">Onderstaande knop verbergt of toont deze tekst</div>
+    <button id="toggleBoxKnop">Verberg / Toon</button><br><br>
+
+    <!-- Voorbeeld 3: Tekst vervangen -->
+    <div id="voorbeeld3">Dit is de oorspronkelijke tekst</div>
+    <button id="vervangTekstKnop">Vervang Tekst</button>
+
+    <form>
+      <label for="Tekstveld">Wat is uw naam?</label>
+      <input type="text" id="Tekstveld" placeholder="Voornaam en Achternaam">
+      <input id="knop" name="knop" type="button" value="Klik op deze knop">
+    </form>
+
+    <div>
+        <p>Klik op onderstaande knop om te pagina te resetten</p>
+        <button id="resetPaginaKnop">Reset pagina</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        // Voorbeeld 1: Tekstkleur wijzigen
+        $('#veranderKleurKnop').click(function() {
+            $('#voorbeeld1').css('color', 'red');
+        });
+
+        // Voorbeeld 2: Elementen verbergen en tonen
+        $('#toggleBoxKnop').click(function() {
+            $('#voorbeeld2').toggle();
+        });
+
+        // Voorbeeld 3: Tekst vervangen
+        $('#vervangTekstKnop').click(function() {
+            $('#voorbeeld3').text('Dit is de vervangende tekst.');
+        });
+
+        $(document).ready(function() {
+        $("#knop").click(function() {
+        var naam = $("#Tekstveld").val();
+        window.alert("Bedankt voor uw bezoek " + naam);
+        });
+        });
+
+        $('#resetPaginaKnop').click(function() {
+            location.reload();
+        });
+    </script>
+    <noscript>Om deze website optimaal te gebruiken is het noodzakelijk om JavaScript te activeren.</noscript>
+</body>
+</html>
